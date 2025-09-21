@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta Gaikwad - Full Stack Developer Portfolio</title>
+    <meta name="description" content="Shweta Gaikwad - Full Stack  Developer specializing in HTML,CSS,Javascript,C++,PHP,Python and modern web technologies. View my portfolio, projects, and get in touch.">
+    <meta name="keywords" content="Full Stack Developer,HTML,CSS, JavaScript, Portfolio, Web Development">
+    
+   
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+   
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay" onclick="closeSidebar()"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <!-- Close button for mobile -->
+            <div class="mobile-close">
+                <button onclick="closeSidebar()" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <img src="assests/profile.png" 
+                     alt="Shweta Gaikwad Profile Picture" class="profile-image">
+                <h1 class="profile-name">Shweta Gaikwad</h1>
+                <p class="profile-title">Full Stack Developer</p>
+                <p class="profile-location">XXX</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home" class="nav-link active" onclick="showSection('home', this)">
+                        <i class="fas fa-home"></i><span>Home</span>
+                    </a></li>
+                    <li><a href="#about" class="nav-link" onclick="showSection('about', this)">
+                        <i class="fas fa-user"></i><span>About</span>
+                    </a></li>
+                    <li><a href="#skills" class="nav-link" onclick="showSection('skills', this)">
+                        <i class="fas fa-code"></i><span>Skills</span>
+                    </a></li>
+                    <li><a href="#projects" class="nav-link" onclick="showSection('projects', this)">
+                        <i class="fas fa-briefcase"></i><span>Projects</span>
+                    </a></li>
+                    <li><a href="#certifications" class="nav-link" onclick="showSection('certifications', this)">
+                        <i class="fas fa-award"></i><span>Certifications</span>
+                    </a></li>
+                    <li><a href="#contact" class="nav-link" onclick="showSection('contact', this)">
+                        <i class="fas fa-envelope"></i><span>Contact</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="theme-toggle-btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                
+                <button class="download-btn" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume</span>
+      
+
+                </button>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+              
+                <a href="" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+               
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <h1>Portfolio</h1>
+            <button onclick="openSidebar()" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Shweta</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                       “Aspiring Full Stack Developer eager to learn, build, and grow in tech.”
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('projects', document.querySelector('a[href=\'#projects\']'))">
+                            View My Work
+                        </button>
+                        <button class="btn btn-outline" onclick="showSection('contact', document.querySelector('a[href=\'#contact\']'))">
+                            Contact Me
+                        </button>
+                    </div>
+                </div>
+                   <!-- <div class="floating-elements">
+                    <div class="float-element float-1"></div>
+                    <div class="float-element float-2"></div>
+                </div>    -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p>Aspiring Full Stack Developer eager to learn and grow in the tech industry</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                             I’m Shweta Gaikwad, currently pursuing my Master's in Computer Science. 
+                               As a fresher, I’m passionate about creating clean, simple, and responsive websites.
+                        <p>
+                             I enjoy exploring new tools and technologies to improve my skills.
+                        </p>
+                        
+                        
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="assests/about.jpg.avif" 
+                             alt="Developer workspace with multiple monitors showing code">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Skills & Technologies</h2>
+                    <p>Technologies I work with to bring ideas to life</p>
+                </div>
+                
+                <div class="skills-grid" id="skills-container">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Some of my recent work that I'm proud to showcase</p>
+                </div>
+                
+                <!-- Project Filter -->
+                <div class="project-filters">
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+                    
+                </div>
+                
+                 <div class="projects-grid" id="projects-container">
+                 <!-- Projects will be populated by JavaScript  -->
+                </div> 
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Certifications</h2>
+                    <p>Professional certifications and achievements</p>
+                </div>
+                
+                <div class="certifications-grid" id="certifications-container">
+                    <!-- Certifications will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to start a project .</p>
+                </div>
+                
+                <div class="contact-content">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-intro">
+                            <h3>Let's Connect</h3>
+                            <p>
+                                I'm always open to discussing new opportunities, interesting projects, or just having a conversation about technology and development.
+                            </p>
+                        </div>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <p class="contact-label">Email</p>
+                                    <p class="contact-value">xxx@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <p class="contact-label">Phone</p>
+                                    <p class="contact-value">+91 xxxxxxxxxx</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <p class="contact-label">Location</p>
+                                    <p class="contact-value">xxx</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media Links -->
+                        <div class="contact-social">
+                            <p class="social-label">Follow me on social media</p>
+                            <div class="social-icons">
+                                <a href="" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                               
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                        
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project or just say hello!" required></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Shweta Gaikwad</h3>
+                        <p>Full Stack Developer passionate about creating amazing digital experiences.</p>
+                        <div class="footer-social">
+                           
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#about" onclick="showSection('about', document.querySelector('a[href=\'#about\']'))">About</a></li>
+                            <li><a href="#skills" onclick="showSection('skills', document.querySelector('a[href=\'#skills\']'))">Skills</a></li>
+                            <li><a href="#projects" onclick="showSection('projects', document.querySelector('a[href=\'#projects\']'))">Projects</a></li>
+                            <li><a href="#contact" onclick="showSection('contact', document.querySelector('a[href=\'#contact\']'))">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Get In Touch</h3>
+                        <div class="footer-contact">
+                            <p>xxxxxxx@gmail.com</p>
+                            <p>+91 xxxxxxxxxx</p>
+                            <p>xxx</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>“© 2025 Shweta Gaikwad. Portfolio website for showcasing my skills and projects.”</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
